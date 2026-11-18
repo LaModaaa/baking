@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Выпечка Счастья – семейная пекарня в Новосибирске</title>
+<meta name="description" content="Семейная пекарня «Выпечка Счастья» в Новосибирске: пироги, хлеб, торты, сладкая и сытная выпечка, кофе с собой. Заказ на сайте, доставка и самовывоз с ул. Новая, 24.">
+<link rel="icon" href="img/logo-photo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800;900&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <a class="logo" href="#top"><img src="img/logo-photo.jpg" alt=""><span>Выпечка<br>Счастья</span></a>
+  <nav>
+    <a href="#catalog">Каталог</a>
+    <a href="#about">О нас</a>
+    <a href="#delivery">Доставка</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+  <button class="cart-btn" type="button" aria-label="Корзина">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h15l-1.5 9h-12z M6 6 5 3H2 M9 20a1 1 0 1 0 0 .1 M18 20a1 1 0 1 0 0 .1"/></svg>
+    <span class="cart-sum">0 ₽</span><b class="cart-count" hidden>0</b>
+  </button>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="hand">семейная пекарня с 2017 года</p>
+        <h1>Свежая выпечка с доставкой по Новосибирску</h1>
+        <p class="lead">Пироги, хлеб, торты и кофе с собой. Печём каждый день всей семьёй – закажите на сайте, привезём или подготовим к самовывозу.</p>
+        <div class="btns">
+          <a class="btn" href="#catalog">Выбрать выпечку</a>
+          <a class="btn ghost" href="#delivery">Как заказать</a>
+        </div>
+        <ul class="hero-facts">
+          <li><b>14</b> человек в команде</li>
+          <li><b>9</b> лет печём для вас</li>
+          <li><b>7:00</b> открываемся в будни</li>
+        </ul>
+      </div>
+      <div class="hero-photos">
+        <img class="hp1" src="img/hero-bread.jpg" alt="Хлеб «Квасной» на деревянной доске">
+        <img class="hp2" src="img/shelves.jpg" alt="Витрина пекарни с выпечкой">
+      </div>
+    </div>
+  </section>
+
+  <!-- Каталог -->
+  <section class="catalog" id="catalog">
+    <div class="wrap">
+      <div class="cat-head">
+        <div>
+          <p class="hand">каталог</p>
+          <h2>Что испекли сегодня</h2>
+        </div>
+        <p class="note">Цену весовой выпечки сверяем в момент заказа – итог подтвердим, когда свяжемся с вами.</p>
+      </div>
+      <div class="chips" id="chips"></div>
+      <div class="grid" id="grid"><p class="empty">Загружаем ассортимент…</p></div>
+    </div>
+  </section>
+
+  <!-- О семье -->
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="about-photos">
+        <img src="img/team.jpg" alt="Команда пекарни «Выпечка Счастья»" loading="lazy">
+        <img src="img/archive-kids.jpg" alt="Из семейного архива" loading="lazy">
+        <img src="img/archive-grandma.jpg" alt="Из семейного архива" loading="lazy">
+      </div>
+      <div>
+        <p class="hand">наша история</p>
+        <h2>Пекарня, где все свои</h2>
+        <p>Пекарню придумали на бумаге в 2013 году Тимур и Ания Чегодарь. В 2017 году они ушли с работы по найму и открыли своё дело – пекарню на улице Новой, 24.</p>
+        <ul class="family">
+          <li><b>Тимур</b> решает все административные вопросы</li>
+          <li><b>Ания</b> – технолог, придумывает авторскую выпечку и десерты</li>
+          <li><b>Папа</b> проращивает пшеницу для хлеба «Здоровье» и заготавливает овощи</li>
+          <li><b>Мама</b> печёт блины по понедельникам, средам и пятницам</li>
+          <li><b>Сестра</b> помогает с бухгалтерией и продажами</li>
+        </ul>
+        <p class="quote">У нас – уют, забота, стабильность и качество!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Как заказать -->
+  <section class="delivery" id="delivery">
+    <div class="wrap">
+      <p class="hand">как заказать</p>
+      <h2>Три шага до тёплой выпечки</h2>
+      <div class="steps">
+        <div class="step"><span>1</span><h3>Соберите корзину</h3><p>Добавьте выпечку и кофе. Для весовых пирогов и тортов выберите вес – шаг 100 г.</p></div>
+        <div class="step"><span>2</span><h3>Оформите заказ</h3><p>Укажите имя, телефон и как удобнее получить: доставка или самовывоз.</p></div>
+        <div class="step"><span>3</span><h3>Мы подтвердим</h3><p>Свяжемся с вами, сверим цену и время. Срочную доставку уточним по телефону.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Галерея -->
+  <section class="gallery-sec">
+    <div class="gallery">
+      <img src="img/cake1.jpg" alt="Торт с ягодами" loading="lazy">
+      <img src="img/counter.jpg" alt="Выпечка на витрине" loading="lazy">
+      <img src="img/baker.jpg" alt="Пекарь с противнем выпечки" loading="lazy">
+      <img src="img/pastry.jpg" alt="Пирожные «Картошка»" loading="lazy">
+      <img src="img/cake2.jpg" alt="Торт" loading="lazy">
+      <img src="img/kitchen.jpg" alt="Цех пекарни" loading="lazy">
+    </div>
+  </section>
+
+  <!-- Контакты -->
+  <section class="contacts" id="contacts">
+    <div class="wrap contacts-grid">
+      <div>
+        <p class="hand">ждём в гости</p>
+        <h2>ул. Новая, 24</h2>
+        <table class="hours">
+          <tr><td>Понедельник – пятница</td><td>7:00 – 21:00</td></tr>
+          <tr><td>Суббота – воскресенье</td><td>9:00 – 21:00</td></tr>
+        </table>
+        <p>Новосибирск, ул. Новая, 24</p>
+        <p>Срочная доставка и вопросы: <a class="phone-link" href="tel:+79950115211">+7 (995) 011-52-11</a></p>
+        <div class="btns">
+          <a class="btn" href="tel:+79950115211">Позвонить</a>
+          <a class="btn ghost" href="https://vk.me/happybakery" target="_blank" rel="noopener">Написать ВКонтакте</a>
+        </div>
+      </div>
+      <div class="map">
+        <iframe src="https://yandex.ru/map-widget/v1/?text=%D0%9D%D0%BE%D0%B2%D0%BE%D1%81%D0%B8%D0%B1%D0%B8%D1%80%D1%81%D0%BA%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F%2024&z=16" title="Пекарня на карте" loading="lazy" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <span>© Семейная пекарня «Выпечка Счастья», Новосибирск</span>
+  <a href="https://vk.ru/happybakery" target="_blank" rel="noopener">vk.ru/happybakery</a>
+</footer>
+
+<!-- Корзина -->
+<div class="overlay" hidden></div>
+<aside class="drawer" aria-label="Корзина" aria-hidden="true">
+  <div class="drawer-head">
+    <h2>Ваш заказ</h2>
+    <button class="close" type="button" aria-label="Закрыть">×</button>
+  </div>
+  <div class="drawer-body">
+    <ul class="cart-list"></ul>
+    <p class="cart-empty">Корзина пока пустая. Загляните в каталог!</p>
+    <form class="order" novalidate hidden>
+      <div class="total"><span>Итого</span><b class="total-sum">0 ₽</b></div>
+      <p class="total-note" hidden>Весовые позиции посчитаны примерно – точную сумму подтвердим.</p>
+      <label>Имя<input name="name" autocomplete="name" required></label>
+      <label>Телефон<input name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+7 ___ ___-__-__" required></label>
+      <fieldset class="how">
+        <label><input type="radio" name="how" value="Самовывоз" checked> Самовывоз (ул. Новая, 24)</label>
+        <label><input type="radio" name="how" value="Доставка"> Доставка</label>
+      </fieldset>
+      <label class="addr" hidden>Адрес доставки<input name="address" autocomplete="street-address"></label>
+      <label>Когда удобно получить<input name="when" placeholder="Например: сегодня к 18:00"></label>
+      <label>Комментарий<textarea name="comment" rows="2"></textarea></label>
+      <p class="form-error" role="alert"></p>
+      <button class="btn wide" type="submit">Оформить заказ</button>
+    </form>
+  </div>
+</aside>
+
+<!-- Окно «заказ готов» -->
+<dialog class="done">
+  <h2>Заказ почти оформлен!</h2>
+  <p>Мы скопировали текст заказа. Отправьте его нам ВКонтакте – просто вставьте в сообщение – или позвоните.</p>
+  <pre class="order-text"></pre>
+  <div class="btns">
+    <a class="btn send-vk" target="_blank" rel="noopener">Отправить ВКонтакте</a>
+    <a class="btn ghost send-call">Позвонить</a>
+    <a class="btn pay" target="_blank" rel="noopener" hidden>Оплатить онлайн</a>
+  </div>
+  <button class="link-btn copy-again" type="button">Скопировать текст ещё раз</button>
+  <button class="close" type="button" aria-label="Закрыть">×</button>
+</dialog>
+
+<div class="toast" role="status" aria-live="polite"></div>
+
+<script src="config.js"></script>
+<script src="cart.js"></script>
+<script src="catalog.js"></script>
+</body>
+</html>

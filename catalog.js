@@ -7,6 +7,21 @@
   var chips = document.getElementById("chips");
   var items = [];
   var activeCat = "Все";
+  var search = document.getElementById("search");
+  var query = "";
+  var showAll = false;
+  var FIRST = 12; // в разделе «Все» сначала показываем 12 товаров, остальные по кнопке
+  // Что показать: выбранный раздел + поиск по названию и описанию
+  function shown() {
+    return items.filter(function (it) {
+      return (activeCat === "Все" || it.cat === activeCat) &&
+        (!query || (it.name + " " + it.desc).toLowerCase().indexOf(query) !== -1);
+    });
+  }
+  function visible() {
+    var list = shown();
+    return activeCat === "Все" && !query && !showAll ? list.slice(0, FIRST) : list;
+  }
 
   // CSV: кавычки, запятые и переносы строк внутри ячеек
   function parseCSV(text) {
@@ -95,9 +110,9 @@
   function render() {
     renderChips();
     grid.innerHTML = "";
-    var shown = items.filter(function (it) { return activeCat === "Все" || it.cat === activeCat; });
-    if (!shown.length) { grid.appendChild(el("p", "empty", "Здесь пока пусто.")); return; }
-    shown.forEach(function (it, i) {
+    var all = shown(), list = visible();
+    if (!list.length) { grid.appendChild(el("p", "empty", query ? "Ничего не нашли – попробуйте другое слово или позвоните нам." : "Здесь пока пусто.")); return; }
+    list.forEach(function (it, i) {
       var card = el("article", "card");
       card.style.setProperty("--i", i % 8);
       var photo = el("div", "photo");
@@ -119,14 +134,22 @@
       card.append(photo, body);
       grid.appendChild(card);
     });
+    if (list.length < all.length) {
+      var more = el("button", "btn ghost more", "Показать все " + all.length);
+      more.type = "button";
+      more.onclick = function () { showAll = true; render(); };
+      grid.appendChild(more);
+    }
   }
 
   // Обновляем только кнопки, чтобы карточки не мигали при каждом +/−
   document.addEventListener("cart:change", function () {
-    var cards = grid.querySelectorAll(".card");
-    var shown = items.filter(function (it) { return activeCat === "Все" || it.cat === activeCat; });
-    cards.forEach(function (c, i) { if (shown[i]) c.querySelector(".buy").replaceWith(buyBox(shown[i])); });
+    var cards = grid.querySelectorAll(".card"), list = visible();
+    cards.forEach(function (c, i) { if (list[i]) c.querySelector(".buy").replaceWith(buyBox(list[i])); });
   });
+  if (search) search.addEventListener("input", function () { query = search.value.trim().toLowerCase(); render(); });
+  window.CatalogBuyBox = buyBox; // та же кнопка «В корзину» для блока хитов
+  function ready() { window.CATALOG_ITEMS = items; document.dispatchEvent(new Event("catalog:ready")); }
 
   function load() {
     var url = SHEET_URL || "products.csv";
@@ -134,14 +157,14 @@
       .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.text(); })
       .then(function (text) {
         var list = toItems(parseCSV(text));
-        if (JSON.stringify(list) !== JSON.stringify(items)) { items = list; render(); }
+        if (JSON.stringify(list) !== JSON.stringify(items)) { items = list; render(); ready(); }
         try { localStorage.setItem(CACHE_KEY, JSON.stringify(list)); } catch (e) {}
       })
       .catch(function () {
         if (items.length) return;
         var cached = null;
         try { cached = JSON.parse(localStorage.getItem(CACHE_KEY) || "null"); } catch (e) {}
-        if (cached && cached.length) { items = cached; render(); }
+        if (cached && cached.length) { items = cached; render(); ready(); }
         else grid.innerHTML = '<p class="empty">Не удалось загрузить ассортимент. Позвоните нам – подскажем, что есть сегодня.</p>';
       });
   }

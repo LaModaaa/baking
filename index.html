@@ -4,50 +4,96 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Выпечка Счастья – семейная пекарня в Новосибирске</title>
-<meta name="description" content="Семейная пекарня «Выпечка Счастья» в Новосибирске: пироги, хлеб, торты, сладкая и сытная выпечка, кофе с собой. Заказ на сайте, доставка и самовывоз с ул. Новая, 24.">
+<meta name="description" content="Семейная пекарня «Выпечка Счастья» в Новосибирске: пироги, хлеб на закваске, круассаны, торты, блины и кофе с собой. Заказ на сайте, доставка и самовывоз с ул. Новая, 24.">
 <link rel="icon" href="img/logo-photo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800;900&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&family=Caveat:wght@600;700&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<div class="preloader" aria-hidden="true">
+  <img src="img/logo-photo.jpg" alt="">
+  <span>Выпечка Счастья</span>
+</div>
+
 <header class="header">
-  <a class="logo" href="#top"><img src="img/logo-photo.jpg" alt=""><span>Выпечка<br>Счастья</span></a>
+  <a class="logo" href="#top"><img src="img/logo-photo.jpg" alt=""><span>Выпечка Счастья</span></a>
   <nav>
+    <a href="#hits">Хиты</a>
     <a href="#catalog">Каталог</a>
-    <a href="#about">О нас</a>
-    <a href="#delivery">Доставка</a>
+    <a href="#family">О нас</a>
+    <a href="#reviews">Отзывы</a>
     <a href="#contacts">Контакты</a>
   </nav>
-  <button class="cart-btn" type="button" aria-label="Корзина">
+  <button class="cart-btn magnetic" type="button" aria-label="Корзина">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h15l-1.5 9h-12z M6 6 5 3H2 M9 20a1 1 0 1 0 0 .1 M18 20a1 1 0 1 0 0 .1"/></svg>
     <span class="cart-sum">0 ₽</span><b class="cart-count" hidden>0</b>
   </button>
 </header>
 
 <main id="top">
+
+  <!-- Первый экран -->
   <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <p class="hand">семейная пекарня с 2017 года</p>
-        <h1>Свежая выпечка с доставкой по Новосибирску</h1>
-        <p class="lead">Пироги, хлеб, торты и кофе с собой. Печём каждый день всей семьёй – закажите на сайте, привезём или подготовим к самовывозу.</p>
-        <div class="btns">
-          <a class="btn" href="#catalog">Выбрать выпечку</a>
-          <a class="btn ghost" href="#delivery">Как заказать</a>
-        </div>
-        <ul class="hero-facts">
-          <li><b>14</b> человек в команде</li>
-          <li><b>9</b> лет печём для вас</li>
-          <li><b>7:00</b> открываемся в будни</li>
-        </ul>
+    <div class="hero-text">
+      <p class="hand">семейная пекарня в Новосибирске</p>
+      <h1>
+        <span class="line"><span>Это не просто</span></span>
+        <span class="line"><span class="swap"><b>круассан.</b><b>пирог.</b><b>хлеб.</b><b>блинчик.</b><b>медовик.</b></span></span>
+        <span class="line"><span>Это <em>счастье.</em></span></span>
+      </h1>
+      <p class="hero-sub">Печём каждый день с 2017 года всей семьёй. Закажите на сайте – привезём тёплым или подготовим к самовывозу на улице Новой, 24.</p>
+      <div class="btns">
+        <a class="btn magnetic" href="#catalog">Заказать выпечку</a>
+        <a class="btn ghost magnetic" href="#hits">Хиты пекарни</a>
       </div>
-      <div class="hero-photos">
-        <img class="hp1" src="img/hero-bread.jpg" alt="Хлеб «Квасной» на деревянной доске">
-        <img class="hp2" src="img/shelves.jpg" alt="Витрина пекарни с выпечкой">
+    </div>
+    <div class="hero-visual">
+      <div class="blob"></div>
+      <img class="hero-main" src="img/p10568392.jpg" alt="Свежие круассаны">
+      <img class="float f1" src="img/p10512546.jpg" alt="" data-depth="30">
+      <img class="float f2" src="img/p2639522.jpg" alt="" data-depth="-24">
+      <img class="float f3" src="img/p7398163.jpg" alt="" data-depth="18">
+      <img class="sticker" src="img/logo-photo.jpg" alt="" data-depth="-40">
+    </div>
+  </section>
+
+  <!-- Ленты -->
+  <div class="tapes" aria-hidden="true">
+    <div class="tape tape-yellow"><div class="tape-in">
+      <span>пироги</span><i>♥</i><span>хлеб на закваске</span><i>♥</i><span>круассаны</span><i>♥</i><span>торты</span><i>♥</i><span>блины</span><i>♥</i><span>кофе с собой</span><i>♥</i>
+      <span>пироги</span><i>♥</i><span>хлеб на закваске</span><i>♥</i><span>круассаны</span><i>♥</i><span>торты</span><i>♥</i><span>блины</span><i>♥</i><span>кофе с собой</span><i>♥</i>
+    </div></div>
+    <div class="tape tape-brown"><div class="tape-in">
+      <span>ул. Новая, 24</span><i>✦</i><span>с 7:00 по будням</span><i>✦</i><span>доставка</span><i>✦</i><span>печём с 2017</span><i>✦</i>
+      <span>ул. Новая, 24</span><i>✦</i><span>с 7:00 по будням</span><i>✦</i><span>доставка</span><i>✦</i><span>печём с 2017</span><i>✦</i>
+    </div></div>
+  </div>
+
+  <!-- Манифест -->
+  <section class="manifest">
+    <p class="manifest-text">Мы – одна семья. Тимур решает все вопросы, Ания придумывает рецепты, папа проращивает пшеницу для хлеба «Здоровье», мама печёт блины, а сестра ведёт продажи. Всё это – чтобы утром у вас был тёплый хлеб.</p>
+  </section>
+
+  <!-- Хиты: горизонтальная лента -->
+  <section class="hits" id="hits">
+    <div class="hits-track">
+      <div class="hits-intro">
+        <p class="hand">хиты пекарни</p>
+        <h2>То, за чем возвращаются</h2>
+        <p>Листайте дальше и добавляйте прямо отсюда.</p>
+        <span class="arrow">→</span>
       </div>
+      <article class="hit" data-name='Пирог "Шоколадно-клубничный"' style="--c:#e2483d"><img src="img/p2280097.jpg" alt="" loading="lazy"><div><h3>Шоколадно-клубничный пирог</h3><p class="hit-price"></p><div class="buy"></div></div></article>
+      <article class="hit" data-name='Пирог "Дёныш"' style="--c:#f39c34"><img src="img/p2269841.jpg" alt="" loading="lazy"><div><h3>Фруктовый пирог «Дёныш»</h3><p class="hit-price"></p><div class="buy"></div></div></article>
+      <article class="hit" data-name="Круассан с шоколадом" style="--c:#7a4b2f"><img src="img/p10568443.jpg" alt="" loading="lazy"><div><h3>Круассан с шоколадом</h3><p class="hit-price"></p><div class="buy"></div></div></article>
+      <article class="hit" data-name="Лимонный тарт" style="--c:#f7c31c"><img src="img/p10817162.jpg" alt="" loading="lazy"><div><h3>Лимонный тарт</h3><p class="hit-price"></p><div class="buy"></div></div></article>
+      <article class="hit" data-name="Торт «Медовик»" style="--c:#d9932b"><img src="img/p9914858.jpg" alt="" loading="lazy"><div><h3>Медовик на алтайском мёде</h3><p class="hit-price"></p><div class="buy"></div></div></article>
+      <article class="hit" data-name='Хлеб "Бородинский 1939"' style="--c:#4a2c1d"><img src="img/p7449012.jpg" alt="" loading="lazy"><div><h3>Бородинский по рецепту 1939 года</h3><p class="hit-price"></p><div class="buy"></div></div></article>
+      <article class="hit" data-name="Перепечи с курицей" style="--c:#c9772f"><img src="img/p7398129.jpg" alt="" loading="lazy"><div><h3>Перепечи с курицей</h3><p class="hit-price"></p><div class="buy"></div></div></article>
+      <article class="hit" data-name="Франдиз с вишней" style="--c:#b3213a"><img src="img/p10516895.jpg" alt="" loading="lazy"><div><h3>Франдиз с вишней</h3><p class="hit-price"></p><div class="buy"></div></div></article>
     </div>
   </section>
 
@@ -57,61 +103,71 @@
       <div class="cat-head">
         <div>
           <p class="hand">каталог</p>
-          <h2>Что испекли сегодня</h2>
+          <h2 class="split">Всё, что печём</h2>
         </div>
-        <p class="note">Цену весовой выпечки сверяем в момент заказа – итог подтвердим, когда свяжемся с вами.</p>
+        <label class="search"><input id="search" type="search" placeholder="Найти: круассан, медовик…" aria-label="Поиск по каталогу"></label>
       </div>
       <div class="chips" id="chips"></div>
+      <p class="note">Цену весовой выпечки сверяем в момент заказа – итог подтвердим, когда свяжемся с вами.</p>
       <div class="grid" id="grid"><p class="empty">Загружаем ассортимент…</p></div>
     </div>
   </section>
 
-  <!-- О семье -->
-  <section class="about" id="about">
-    <div class="wrap about-grid">
-      <div class="about-photos">
-        <img src="img/team.jpg" alt="Команда пекарни «Выпечка Счастья»" loading="lazy">
-        <img src="img/archive-kids.jpg" alt="Из семейного архива" loading="lazy">
-        <img src="img/archive-grandma.jpg" alt="Из семейного архива" loading="lazy">
+  <!-- Цифры -->
+  <section class="numbers">
+    <div class="wrap">
+      <div><b data-count="126">0</b><span>видов выпечки, хлеба и десертов</span></div>
+      <div><b data-count="14">0</b><span>человек в нашей команде</span></div>
+      <div><b data-count="9">0</b><span>лет печём для Новосибирска</span></div>
+    </div>
+  </section>
+
+  <!-- Семья -->
+  <section class="family" id="family">
+    <div class="wrap family-grid">
+      <div class="family-photos">
+        <img class="fp1" src="img/team.jpg" alt="Команда пекарни «Выпечка Счастья»" loading="lazy">
+        <img class="fp2" src="img/archive-kids.jpg" alt="Из семейного архива" loading="lazy">
+        <img class="fp3" src="img/archive-grandma.jpg" alt="Из семейного архива" loading="lazy">
       </div>
       <div>
         <p class="hand">наша история</p>
-        <h2>Пекарня, где все свои</h2>
-        <p>Пекарню придумали на бумаге в 2013 году Тимур и Ания Чегодарь. В 2017 году они ушли с работы по найму и открыли своё дело – пекарню на улице Новой, 24.</p>
-        <ul class="family">
-          <li><b>Тимур</b> решает все административные вопросы</li>
-          <li><b>Ания</b> – технолог, придумывает авторскую выпечку и десерты</li>
-          <li><b>Папа</b> проращивает пшеницу для хлеба «Здоровье» и заготавливает овощи</li>
-          <li><b>Мама</b> печёт блины по понедельникам, средам и пятницам</li>
-          <li><b>Сестра</b> помогает с бухгалтерией и продажами</li>
+        <h2 class="split">Пекарня, где все свои</h2>
+        <p class="lead">Пекарню придумали на бумаге в 2013 году Тимур и Ания Чегодарь. В 2017-м они ушли с работы по найму и открыли своё дело на улице Новой, 24. Сейчас нас 14 человек – и место найдётся каждому достойному.</p>
+        <ul class="facts">
+          <li><b>Хлеб «Здоровье»</b><span>Без муки и дрожжей – из пророщенной папой пшеницы</span></li>
+          <li><b>Блины</b><span>Мама печёт по понедельникам, средам и пятницам</span></li>
+          <li><b>Пахлава</b><span>Старинный семейный рецепт семьи Чегодарь</span></li>
+          <li><b>Сгущёнка</b><span>Варим сами, прямо в банках, для орешков и трубочек</span></li>
         </ul>
-        <p class="quote">У нас – уют, забота, стабильность и качество!</p>
       </div>
     </div>
   </section>
 
   <!-- Как заказать -->
-  <section class="delivery" id="delivery">
+  <section class="steps-sec">
     <div class="wrap">
       <p class="hand">как заказать</p>
-      <h2>Три шага до тёплой выпечки</h2>
+      <h2 class="split">Три шага до тёплой выпечки</h2>
       <div class="steps">
-        <div class="step"><span>1</span><h3>Соберите корзину</h3><p>Добавьте выпечку и кофе. Для весовых пирогов и тортов выберите вес – шаг 100 г.</p></div>
-        <div class="step"><span>2</span><h3>Оформите заказ</h3><p>Укажите имя, телефон и как удобнее получить: доставка или самовывоз.</p></div>
-        <div class="step"><span>3</span><h3>Мы подтвердим</h3><p>Свяжемся с вами, сверим цену и время. Срочную доставку уточним по телефону.</p></div>
+        <div class="step"><span>1</span><h3>Соберите корзину</h3><p>Для весовых пирогов и тортов вес выбирается шагом 100 г.</p></div>
+        <div class="step"><span>2</span><h3>Оформите заказ</h3><p>Имя, телефон и как удобнее: доставка или самовывоз.</p></div>
+        <div class="step"><span>3</span><h3>Мы подтвердим</h3><p>Свяжемся, сверим цену и время. Срочную доставку уточним по телефону.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- Галерея -->
-  <section class="gallery-sec">
-    <div class="gallery">
-      <img src="img/cake1.jpg" alt="Торт с ягодами" loading="lazy">
-      <img src="img/counter.jpg" alt="Выпечка на витрине" loading="lazy">
-      <img src="img/baker.jpg" alt="Пекарь с противнем выпечки" loading="lazy">
-      <img src="img/pastry.jpg" alt="Пирожные «Картошка»" loading="lazy">
-      <img src="img/cake2.jpg" alt="Торт" loading="lazy">
-      <img src="img/kitchen.jpg" alt="Цех пекарни" loading="lazy">
+  <!-- Отзывы -->
+  <section class="reviews" id="reviews">
+    <div class="wrap">
+      <p class="hand">отзывы</p>
+      <h2 class="split">Нам пишут</h2>
+    </div>
+    <div class="rev-track">
+      <article class="rev"><span class="stars">★★★★★</span><p>Делала подруге сюрприз на праздник, выбирала для неё красивый пирог с фруктами. Очень удобно, что можно заказать напрямую. Не надо никуда бегать, просто позвонил – и тебе привезут сразу из печи…</p><footer><b>Анисия Ф.</b><span>январь 2025</span></footer></article>
+      <article class="rev"><span class="stars">★★★★★</span><p>Обожаем там всё! То самое место, куда идём не за покупками, а за ощущением счастья, название пекарни полностью отражает впечатления от неё…</p><footer><b>Елена Р.</b><span>июль 2025</span></footer></article>
+      <article class="rev"><span class="stars">★★★★★</span><p>Спасибо за розыгрыши! И за возможность самый обычный день превратить в настоящий праздник с помощью вкусного десерта. Благодаря розыгрышу открыли для себя чудесную пекарню со вкуснейшей выпечкой недалеко от дома.</p><footer><b>Алла Д.</b><span>июль 2025</span></footer></article>
+      <article class="rev"><span class="stars">★★★★★</span><p>Очень понравился ассортимент и качество продукции! Поближе к дому бы такую пекарню – вопросов у домашних «что бы к чаю» или «что взять к празднику» не возникло бы. В этой пекарне найдётся всё!</p><footer><b>Андрей Г.</b><span>декабрь 2025</span></footer></article>
     </div>
   </section>
 
@@ -119,17 +175,19 @@
   <section class="contacts" id="contacts">
     <div class="wrap contacts-grid">
       <div>
-        <p class="hand">ждём в гости</p>
-        <h2>ул. Новая, 24</h2>
+        <img class="wave" src="img/logo-photo.jpg" alt="">
+        <h2 class="split">Заходите в гости</h2>
         <table class="hours">
           <tr><td>Понедельник – пятница</td><td>7:00 – 21:00</td></tr>
           <tr><td>Суббота – воскресенье</td><td>9:00 – 21:00</td></tr>
         </table>
-        <p>Новосибирск, ул. Новая, 24</p>
-        <p>Срочная доставка и вопросы: <a class="phone-link" href="tel:+79950115211">+7 (995) 011-52-11</a></p>
+        <dl>
+          <div><dt>Адрес</dt><dd>Новосибирск, ул. Новая, 24</dd></div>
+          <div><dt>Срочная доставка и вопросы</dt><dd><a href="tel:+79950115211">+7 (995) 011-52-11</a></dd></div>
+        </dl>
         <div class="btns">
-          <a class="btn" href="tel:+79950115211">Позвонить</a>
-          <a class="btn ghost" href="https://vk.me/happybakery" target="_blank" rel="noopener">Написать ВКонтакте</a>
+          <a class="btn dark magnetic" href="tel:+79950115211">Позвонить</a>
+          <a class="btn ghost magnetic" href="https://vk.me/happybakery" target="_blank" rel="noopener">Написать ВКонтакте</a>
         </div>
       </div>
       <div class="map">
@@ -172,7 +230,6 @@
   </div>
 </aside>
 
-<!-- Окно «заказ готов» -->
 <dialog class="done">
   <h2>Заказ почти оформлен!</h2>
   <p>Мы скопировали текст заказа. Отправьте его нам ВКонтакте – просто вставьте в сообщение – или позвоните.</p>
@@ -191,5 +248,8 @@
 <script src="config.js"></script>
 <script src="cart.js"></script>
 <script src="catalog.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

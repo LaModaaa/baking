@@ -46,6 +46,12 @@
   function save() { try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {} }
 
   var $ = function (s, r) { return (r || document).querySelector(s); };
+  // Кнопки MAX видны, только если в config.js указана ссылка на профиль
+  if (cfg.maxLink) {
+    [].forEach.call(document.querySelectorAll(".max-only"), function (a) { a.href = cfg.maxLink; a.hidden = false; });
+    var via = document.querySelector(".done .via");
+    if (via) via.textContent = "ВКонтакте или в MAX";
+  }
   var drawer = $(".drawer"), overlay = $(".overlay"), form = $(".order"), dlg = $(".done");
 
   function find(name) { return list.find(function (it) { return it.name === name; }); }

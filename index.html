@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&family=Caveat:wght@600;700&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -228,6 +228,7 @@
         <div class="btns">
           <a class="btn dark magnetic" href="tel:+79950115211">Позвонить</a>
           <a class="btn ghost magnetic" href="https://vk.me/happybakery" target="_blank" rel="noopener">Написать ВКонтакте</a>
+          <a class="btn btn-max magnetic max-only" target="_blank" rel="noopener" hidden>Написать в MAX</a>
         </div>
       </div>
       <div class="map">
@@ -274,10 +275,11 @@
 
 <dialog class="done">
   <h2>Заказ почти оформлен!</h2>
-  <p>Мы скопировали текст заказа. Отправьте его нам ВКонтакте – просто вставьте в сообщение – или позвоните.</p>
+  <p>Мы скопировали текст заказа. Отправьте его нам <span class="via">ВКонтакте</span> – просто вставьте в сообщение – или позвоните.</p>
   <pre class="order-text"></pre>
   <div class="btns">
     <a class="btn send-vk" target="_blank" rel="noopener">Отправить ВКонтакте</a>
+    <a class="btn btn-max send-max max-only" target="_blank" rel="noopener" hidden>Отправить в MAX</a>
     <a class="btn ghost send-call">Позвонить</a>
     <a class="btn pay" target="_blank" rel="noopener" hidden>Оплатить онлайн</a>
   </div>
@@ -287,11 +289,11 @@
 
 <div class="toast" role="status" aria-live="polite"></div>
 
-<script src="config.js?v=5"></script>
-<script src="cart.js?v=5"></script>
-<script src="catalog.js?v=5"></script>
+<script src="config.js?v=6"></script>
+<script src="cart.js?v=6"></script>
+<script src="catalog.js?v=6"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="app.js?v=5"></script>
+<script src="app.js?v=6"></script>
 </body>
 </html>

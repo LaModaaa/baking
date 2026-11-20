@@ -321,3 +321,7 @@ h3 { font-weight: 700; }
 .search { display: block; width: min(360px, 100%); }
 .search input { width: 100%; border-color: #e2c99f; padding-left: 46px; box-shadow: 0 6px 18px rgba(74, 44, 29, .07);
   background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237a4b2f' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E") 16px center / 20px no-repeat; }
+
+/* кнопка MAX в фирменных цветах мессенджера */
+.btn.btn-max { background: linear-gradient(135deg, #2f6bff, #8b3dff); color: #fff; }
+.btn.btn-max:hover { background: linear-gradient(135deg, #2457d6, #7230d6); color: #fff; }

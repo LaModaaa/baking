@@ -46,7 +46,7 @@
   // Столбцы ищем по названию – порядок в таблице не важен
   var COLUMNS = {
     cat: ["раздел", "категория"], name: ["название", "товар"], price: ["цена", "стоимость"],
-    unit: ["единица", "ед.", "за"], desc: ["описание"], photo: ["фото", "картинка"], stock: ["в наличии", "наличие"],
+    unit: ["единица", "ед.", "за"], badge: ["метка", "значок"], desc: ["описание"], photo: ["фото", "картинка"], stock: ["в наличии", "наличие"],
   };
   function toItems(rows) {
     var head = rows[0].map(function (h) { return h.trim().toLowerCase(); });
@@ -58,7 +58,7 @@
       return {
         cat: get(r, "cat") || "Разное", name: get(r, "name"),
         price: Number(get(r, "price").replace(/\s/g, "").replace(",", ".")) || 0,
-        unit: get(r, "unit") || "шт", desc: get(r, "desc"), photo: get(r, "photo"),
+        unit: get(r, "unit") || "шт", badge: get(r, "badge"), desc: get(r, "desc"), photo: get(r, "photo"),
         inStock: !/^(нет|-|0|no)$/i.test(get(r, "stock")),
       };
     }).filter(function (it) { return it.name && it.inStock; });
@@ -122,6 +122,7 @@
         img.onerror = function () { photo.classList.add("noimg"); img.remove(); };
         photo.appendChild(img);
       } else photo.classList.add("noimg");
+      if (it.badge) photo.appendChild(el("span", "badge", it.badge));
       var body = el("div", "body");
       body.appendChild(el("span", "cat", it.cat));
       body.appendChild(el("h3", "name", it.name));

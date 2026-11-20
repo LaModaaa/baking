@@ -25,6 +25,17 @@
       return lines.join("\n");
     },
     validPhone: function (p) { return String(p || "").replace(/\D/g, "").length >= 10; },
+    // Сверка корзины с каталогом: свежие цены, убранные товары выпадают
+    sync: function (list, catalog) {
+      var removed = [], changed = false;
+      var next = list.filter(function (it) {
+        var c = catalog.find(function (x) { return x.name === it.name; });
+        if (!c) { removed.push(it.name); return false; }
+        if (c.price !== it.price || c.unit !== it.unit) { it.price = c.price; it.unit = c.unit; changed = true; }
+        return true;
+      });
+      return { list: next, removed: removed, changed: changed || removed.length > 0 };
+    },
   };
   (typeof window !== "undefined" ? window : globalThis).CartCore = CartCore;
   if (typeof document === "undefined") return; // запуск из теста без браузера
@@ -103,12 +114,14 @@
   function openDrawer() {
     drawer.classList.add("open");
     drawer.setAttribute("aria-hidden", "false");
+    drawer.inert = false;
     overlay.hidden = false;
     document.body.classList.add("lock");
   }
   function closeDrawer() {
     drawer.classList.remove("open");
     drawer.setAttribute("aria-hidden", "true");
+    drawer.inert = true;
     overlay.hidden = true;
     document.body.classList.remove("lock");
   }
@@ -116,6 +129,16 @@
   $(".drawer .close").addEventListener("click", closeDrawer);
   overlay.addEventListener("click", closeDrawer);
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeDrawer(); });
+  drawer.inert = true; // закрытая корзина не ловит Tab
+
+  // Каталог загрузился или обновился – подтягиваем свежие цены в корзину
+  document.addEventListener("catalog:ready", function () {
+    var r = CartCore.sync(list, window.CATALOG_ITEMS || []);
+    if (!r.changed) return;
+    list = r.list;
+    changed();
+    if (r.removed.length) toast("Убрали из корзины – больше нет в продаже: " + r.removed.join(", "));
+  });
 
   // Адрес нужен только для доставки
   form.addEventListener("change", function () {

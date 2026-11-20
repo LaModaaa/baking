@@ -27,7 +27,10 @@
       var it = items.find(function (x) { return x.name === h.dataset.name; });
       if (!it) { h.hidden = true; return; } // товар убрали из каталога – прячем
       h.hidden = false;
-      h.querySelector(".hit-price").innerHTML = CartCore.money(it.price) + " <small>/ " + it.unit + "</small>";
+      var pr = h.querySelector(".hit-price"), small = document.createElement("small");
+      small.textContent = " / " + it.unit;
+      pr.textContent = CartCore.money(it.price);
+      pr.appendChild(small);
       h.querySelector(".buy").replaceWith(window.CatalogBuyBox(it));
     });
   }
@@ -133,7 +136,11 @@
   // 8. Семья: фото на разной скорости, факты лесенкой
   gsap.fromTo(".fp2", { y: 60 }, { y: -30, ease: "none", scrollTrigger: { trigger: ".family", start: "top bottom", end: "bottom top", scrub: true } });
   gsap.fromTo(".fp3", { y: -20, rotate: 12 }, { y: 50, rotate: 5, ease: "none", scrollTrigger: { trigger: ".family", start: "top bottom", end: "bottom top", scrub: true } });
-  gsap.from(".facts li", { y: 40, opacity: 0, stagger: 0.1, duration: 0.7, scrollTrigger: { trigger: ".facts", start: "top 88%" } });
+  gsap.from(".timeline li", { x: 40, opacity: 0, stagger: 0.15, duration: 0.7, scrollTrigger: { trigger: ".timeline", start: "top 85%" } });
+  gsap.from(".person", { y: 60, opacity: 0, rotate: function (i) { return (i - 2) * 3; }, stagger: 0.1, duration: 0.8, ease: "back.out(1.6)", scrollTrigger: { trigger: ".people", start: "top 88%" } });
+  gsap.from(".person .avatar", { scale: 0, stagger: 0.1, duration: 0.7, delay: 0.3, ease: "back.out(2.5)", scrollTrigger: { trigger: ".people", start: "top 88%" } });
+  gsap.from(".value", { y: 70, opacity: 0, stagger: 0.12, duration: 0.9, ease: "back.out(1.4)", scrollTrigger: { trigger: ".values-grid", start: "top 85%" } });
+  gsap.from(".value svg", { rotate: -90, scale: 0, stagger: 0.12, duration: 0.8, delay: 0.25, ease: "back.out(2)", scrollTrigger: { trigger: ".values-grid", start: "top 85%" } });
   gsap.from(".step", { y: 60, opacity: 0, rotate: function (i) { return (i - 1) * 4; }, stagger: 0.12, duration: 0.9, ease: "back.out(1.5)", scrollTrigger: { trigger: ".steps", start: "top 85%" } });
 
   // 9. Отзывы едут вбок вместе с прокруткой

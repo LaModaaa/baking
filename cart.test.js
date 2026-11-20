@@ -22,3 +22,14 @@ assert.ok(!t.includes("Когда:"));
 const t2 = C.orderText([list[1]], { name: "Анна", phone: "+79990000000", how: "Самовывоз", address: "x", when: "к 18:00", comment: "" });
 assert.ok(!t2.includes("≈") && !t2.includes("Адрес:") && t2.includes("Когда: к 18:00"));
 console.log("cart ok");
+
+// Сверка корзины с каталогом
+const cart = [{ name: "Эклер", price: 100, unit: "шт", qty: 2 }, { name: "Старый пирог", price: 50, unit: "100 г", qty: 3 }];
+const r = C.sync(cart, [{ name: "Эклер", price: 119, unit: "шт" }]);
+assert.deepStrictEqual(r.removed, ["Старый пирог"]);
+assert.strictEqual(r.list.length, 1);
+assert.strictEqual(r.list[0].price, 119);
+assert.strictEqual(r.list[0].qty, 2);
+assert.strictEqual(r.changed, true);
+assert.strictEqual(C.sync([{ name: "Эклер", price: 119, unit: "шт", qty: 1 }], [{ name: "Эклер", price: 119, unit: "шт" }]).changed, false);
+console.log("sync ok");

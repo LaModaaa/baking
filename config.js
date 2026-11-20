@@ -3,7 +3,7 @@ window.BAKERY_CONFIG = {
   // Ссылка на опубликованную Google Таблицу с товарами (формат CSV).
   // Пока пусто – товары берутся из файла products.csv.
   // Как получить: Файл → Поделиться → Опубликовать в интернете → лист, «Формат CSV» → Опубликовать.
-  sheetCsvUrl: "",
+  sheetCsvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQC8dentjpGD4fcWF-A-_1JBgUu23mzyVpLZNji9vpZ8U0XrBcL1VId9v3Pl724rZHDiSg4XlJB4U-M/pub?gid=0&single=true&output=csv",
 
   phone: "+79950115211",
   phoneText: "+7 (995) 011-52-11",
